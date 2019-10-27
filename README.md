@@ -7,10 +7,10 @@ Some proficiency with Git, Python, Django, and your terminal is assumed. No prof
 ### Overview
 
 This repository is an example of what a typical SportsHi backend application codebase would look like, although production related files and folders have been omitted to keep things simple. The notable items are...
-- `local`: shell script that provides a number of useful commands for local development. In your terminal run `./local` to see the full list of commands; you will at least need to use the `up`, `down`, `python`, and `lint` commands.
-- `docker/local/`: directory containing files used by Docker for local development.
-- `components/`: directory containing some number of isolated source code directories, each of which would run in a distinct Docker container; in this example there is only one component, but multiple components are common for real world applications, such as a server combined with a reverse proxy.
-- `components/server/`: directory containing the source code for a server, in this example a [Django](https://www.djangoproject.com/) server using Python 3; **you should only edit the files in this folder**.
+- `local`: Shell script that provides a number of useful commands for local development; in your terminal run `./local` to see the full list of commands; you will at least need to use the `up`, `down`, `python`, and `lint` commands
+- `docker/local/`: Directory containing files used by Docker for local development
+- `components/`: Directory containing some number of isolated source code directories, each of which would run in a distinct Docker container; in this example there is only one component, but multiple components are common for real world applications, such as a server combined with a reverse proxy
+- `components/server/`: Directory containing the source code for a server, in this example a [Django](https://www.djangoproject.com/) server using Python 3; **you should only edit the files in this folder**
 
 ### About the Django server
 
