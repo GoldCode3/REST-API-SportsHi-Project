@@ -17,6 +17,8 @@ case $command in
    ;;
    python) eval "$compose run server python ${@:2} ; $down"
    ;;
-   *) echo "$filename <build|up|down|django-admin|python>"
+   lint) eval "$compose run --no-deps server flake8 . ; $down"
+   ;;
+   *) echo "$filename <build|up|down|django-admin|python|lint>"
    ;;
 esac

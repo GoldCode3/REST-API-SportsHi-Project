@@ -7,14 +7,14 @@ Some proficiency with Git, Python, Django, and your terminal is assumed. No prof
 ### Overview
 
 This repository is an example of what a typical SportsHi backend application codebase would look like, although production related files and folders have been omitted to keep things simple. The notable items are...
-- `local`: shell script that provides a number of useful commands for local development. In your terminal run `./local` to see the full list of commands; you will at least need to use the `up`, `down`, and `python` commands.
+- `local`: shell script that provides a number of useful commands for local development. In your terminal run `./local` to see the full list of commands; you will at least need to use the `up`, `down`, `python`, and `lint` commands.
 - `docker/local/`: directory containing files used by Docker for local development.
 - `components/`: directory containing some number of isolated source code directories, each of which would run in a distinct Docker container; in this example there is only one component, but multiple components are common for real world applications, such as a server combined with a reverse proxy.
 - `components/server/`: directory containing the source code for a server, in this example a [Django](https://www.djangoproject.com/) server; **you should only edit the files in this folder**.
 
 ### About the Django server
 
-The Django server has been created for you in the `components/server/` directory. It includes a Django app called `notes` in `server/apps/notes/` that was generated using the Django CLI and has not been modified. The Django project files are in  `server/project/`. The server is already setup to connect with a PostgreSQL database, which is automatically created for you when you start the server using the command `./local up`. You can kill the server using `./local down`, which will also bring down the database and save its data. If you need to use the Django CLI, you can run commands using `./local django-admin ...` or `./local python ...`. For example, to update the database with your latest models you would run `./local python manage.py migrate`. Note that these commands will be running **inside** a Docker container where the working directory is `server/`, so there is no need to change your terminal's working directory - it is suggested that you keep the top level directory of this repository as your terminal's working directory.
+The Django server has been created for you in the `components/server/` directory. It includes a Django app called `notes` in `server/apps/notes/` that was generated using the Django CLI and has not been modified. The Django project files are in  `server/project/`. The server is already setup to connect with a PostgreSQL database, which is automatically created for you when you start the server using the command `./local up`. You can kill the server using `./local down`, which will also bring down the database and save its data. If you need to use the Django CLI, you can run commands using `./local django-admin ...` or `./local python ...`. For example, to update the database with your latest models you would run `./local python manage.py migrate`. Note that these commands will be running **inside** a Docker container where the working directory is `server/`, so there is no need to change your terminal's working directory - it is suggested that you keep the top level directory of this repository as your terminal's working directory. To lint your python code against the PEP 8 style guide run `./local lint`.
 
 ### Your task
 
@@ -33,6 +33,8 @@ Roughly, the steps you need to follow to complete your task are...
 7. Visit `http://0.0.0.0:8000/` in your browser to verify that the django server is running
 8. Edit the files in `components/server/...` to implement the API defined [here](https://app.swaggerhub.com/apis/sportshi-team/notes/1.0)
 
+Additionally, your code should conform to the PEP 8 style guide. You check how you're doing by running `./local lint`.
+
 ### When you are done
 
- Once you have finished your task you should push this repository to your own GitHub account under public settings so that it can be cloned by a SportsHi team member for testing. Let a SportsHi team member know when it is ready. They will test your API to see if it implements the specification.
+ Once you have finished your task you should push this repository to your own GitHub account under public settings so that it can be cloned by a SportsHi team member for testing. Let a SportsHi team member know when it is ready. They will test your API to see if it implements the specification. The quality of the code that you write will also be considered.
