@@ -24,14 +24,14 @@ While developing you will need to interact with your API to test it. Run `./loca
 
 Roughly, the steps you need to follow to complete your task are...
 
-- 1) Clone the repository onto your machine
-- 2) [Download and install](https://www.docker.com/products/docker-desktop) Docker Desktop for your operating system
-- 3) Start Docker Desktop on your machine
-- 4) Open your terminal and cd into the repository
-- 5) Run `./local python manage.py migrate` so that Django can initialize the database
-- 6) Run `./local up` to start the server and database
-- 7) Visit `http://0.0.0.0:8000/` in your browser to verify that the django server is running
-- 8) Edit the files in `components/server/...` to implement the API defined [here](https://app.swaggerhub.com/apis/sportshi-team/notes/1.0)
+1. Clone the repository onto your machine
+2. [Download and install](https://www.docker.com/products/docker-desktop) Docker Desktop for your operating system
+3. Start Docker Desktop on your machine
+4. Open your terminal and cd into the repository
+5. Run `./local python manage.py migrate` so that Django can initialize the database
+6. Run `./local up` to start the server and database
+7. Visit `http://0.0.0.0:8000/` in your browser to verify that the django server is running
+8. Edit the files in `components/server/...` to implement the API defined [here](https://app.swaggerhub.com/apis/sportshi-team/notes/1.0)
 
 ### When you are done
 
