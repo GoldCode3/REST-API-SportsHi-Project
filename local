@@ -1,0 +1,22 @@
+#!/bin/sh
+
+compose="docker-compose -p notes -f ./docker/local/docker-compose.yml"
+down="$compose stop -t 0 && $compose rm -f -v"
+
+filename=$0
+command=$1
+
+case $command in
+   build) eval "$compose build"
+   ;;
+   up) eval "$compose up &"
+   ;;
+   down) eval "$down"
+   ;;
+   django-admin) eval "$compose run server django-admin ${@:2} ; $down"
+   ;;
+   python) eval "$compose run server python ${@:2} ; $down"
+   ;;
+   *) echo "$filename <build|up|down|django-admin|python>"
+   ;;
+esac
