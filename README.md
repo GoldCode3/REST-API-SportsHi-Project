@@ -10,11 +10,11 @@ This repository is an example of what a typical SportsHi backend application cod
 - `local`: shell script that provides a number of useful commands for local development. In your terminal run `./local` to see the full list of commands; you will at least need to use the `up`, `down`, `python`, and `lint` commands.
 - `docker/local/`: directory containing files used by Docker for local development.
 - `components/`: directory containing some number of isolated source code directories, each of which would run in a distinct Docker container; in this example there is only one component, but multiple components are common for real world applications, such as a server combined with a reverse proxy.
-- `components/server/`: directory containing the source code for a server, in this example a [Django](https://www.djangoproject.com/) server; **you should only edit the files in this folder**.
+- `components/server/`: directory containing the source code for a server, in this example a [Django](https://www.djangoproject.com/) server using Python 3; **you should only edit the files in this folder**.
 
 ### About the Django server
 
-The Django server has been created for you in the `components/server/` directory. It includes a Django app called `notes` in `server/apps/notes/` that was generated using the Django CLI and has not been modified. The Django project files are in  `server/project/`. The server is already setup to connect with a PostgreSQL database, which is automatically created for you when you start the server using the command `./local up`. You can kill the server using `./local down`, which will also bring down the database and save its data. If you need to use the Django CLI, you can run commands using `./local django-admin ...` or `./local python ...`. For example, to update the database with your latest models you would run `./local python manage.py migrate`. Note that these commands will be running **inside** a Docker container where the working directory is `server/`, so there is no need to change your terminal's working directory - it is suggested that you keep the top level directory of this repository as your terminal's working directory. To lint your python code against the PEP 8 style guide run `./local lint`.
+The Django server has been created for you in the `components/server/` directory. It includes a Django app called `notes` in `server/apps/notes/` that was generated using the Django CLI and has not been modified. The Django project files are in  `server/project/`. The server is already setup to connect with a PostgreSQL database, which is automatically created for you when you start the server using the command `./local up`. You can kill the server using `./local down`, which will also bring down the database and save its data. If you need to use the Django CLI, you can run commands using `./local django-admin ...` or `./local python ...`. For example, to update the database with your latest models you would run `./local python manage.py migrate`. Note that these commands will be running **inside** a Docker container where the working directory is `server/`, so there is no need to change your terminal's working directory - it is suggested that you keep the top level directory of this repository as your terminal's working directory. To lint your Python code against the PEP 8 style guide run `./local lint`.
 
 ### Your task
 
@@ -25,7 +25,7 @@ While developing you will need to interact with your API to test it. Run `./loca
 Roughly, the steps you need to follow to complete your task are...
 
 1. Clone the repository onto your machine
-2. [Download and install](https://www.docker.com/products/docker-desktop) Docker Desktop for your operating system
+2. [Download and install](https://www.docker.com/products/docker-desktop) Docker Desktop for your operating system; aside from Docker you don't need any other special software installed on on your machine, not even Python.
 3. Start Docker Desktop on your machine
 4. Open your terminal and cd into the repository
 5. Run `./local python manage.py migrate` so that Django can initialize the database
