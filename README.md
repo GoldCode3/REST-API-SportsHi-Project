@@ -33,7 +33,7 @@ Roughly, the steps you need to follow to complete your task are...
 7. Visit `http://0.0.0.0:8000/` in your browser to verify that the django server is running
 8. Edit the files in `components/server/...` to implement the API defined [here](https://app.swaggerhub.com/apis/sportshi-team/notes/1.0)
 
-Additionally, your code should conform to the PEP 8 style guide. You check how you're doing by running `./local lint`.
+Additionally, your code should conform to the PEP 8 style guide; you can check how you're doing by running `./local lint`.
 
 ### When you are done
 
