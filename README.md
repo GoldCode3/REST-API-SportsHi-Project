@@ -25,7 +25,7 @@ While developing you will need to interact with your API to test it. Run `./loca
 Roughly, the steps you need to follow to complete your task are...
 
 1. Clone the repository onto your machine
-2. [Download and install](https://www.docker.com/products/docker-desktop) Docker Desktop for your operating system; note that you do not need to install Python, PostgreSQL, or any other software onto your machine
+2. [Download and install](https://docs.docker.com/v17.12/install/) Docker CE for your operating system; note that you do not need to install Python, PostgreSQL, or any other software onto your machine
 3. Start Docker Desktop on your machine
 4. Open your terminal and cd into the repository
 5. Run `./local python manage.py migrate` so that Django can initialize the database; the first time you run this will be slow as Docker will be starting from scratch
