@@ -26,7 +26,7 @@ Roughly, the steps you need to follow to complete your task are...
 
 1. Clone the repository onto your machine
 2. [Download and install](https://docs.docker.com/v17.12/install/) Docker CE for your operating system; note that you do not need to install Python, PostgreSQL, or any other software onto your machine
-3. Start Docker Desktop on your machine
+3. Start Docker
 4. Open your terminal and cd into the repository
 5. Run `./local python manage.py migrate` so that Django can initialize the database; the first time you run this will be slow as Docker will be starting from scratch
 6. Run `./local up` to start the server and database
