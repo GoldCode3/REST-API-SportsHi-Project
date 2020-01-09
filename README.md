@@ -1,40 +1,28 @@
-# notes
+Hey All!
 
-**Please read this entire README before you begin**
+This GitHub Repository contains the final completed project that was assigned to me for SportsHi's intern screening process.
 
-Some proficiency with Git, Python, Django, and your terminal is assumed. No proficiency with Docker is assumed but it is suggested that you read [this](https://docs.docker.com/engine/docker-overview/) to get familiar with the vocabulary.
+In order to test this implementation without any difficulty, I have listed some easy steps to follow in order to make the testing process really simple.
 
-### Overview
+          1) Clone this repository in order to have full access to the django application.
+          2) I used Postman in order to make requests to my API so the steps following this will illustrate how to make requests                        using said API Development tool. If you haven't already downloaded Postman, here's a link (https://www.getpostman.com/downloads/) to do so for your respective platform. However, feel free to use whichever medium you are most      comfortable with in order to make requests to the API.
+          3) Once you have downloaded Postman successfully, proceed to launch it and then you'll be prompted to create an account. Once that is successfully completed, you will be guided to the LaunchPad section of Postman. 
+          4) Next to the tab that says LaunchPad, there will be a plus icon to add a new tab. Click on it and it will open up an untitled request tab.
+          5) In this tab, you will see a search bar where you can enter a request URL. That URL should be http://0.0.0.0:8000/notes 
+          6) It is automatically set to send a GET request first so well start with that which is simple. Just click the blue SEND button and you will receive a JSON response with the contents of the API, with the most recent on top.
+          7) Next, we'll send a POST request which takes a couple more steps. First, we need to go to the dropdown menu which is occupied by GET at the moment and change it to POST.
+          8) You will see a menu bar under the URL containing the sections "Params", "Authorization", and so on. In this menu bar, you will find the Body section, that's what we need so go ahead and select it.
+          9) You'll see another set of options but select "raw" because that is where we will specify what we want to post. Also change TEXT to JSON in the dropdown menu.
+          10) This will introduce you to an empty editor where you should enter the following parameters exactly as shown below:
+                        {
+                           "id": "YOUR ID NUMBER HERE"
+                           "note_content": "THE CONTENTS OF YOUR NOTE HERE"
+                        }
+          11) Once you fill in your id and your message, we are ready to send the POST request.
+          12) If all goes well, you will receive a "Status: 200 OK" which means that your POST request was successful.
+          13) Finally, send another GET request to ensure that your note has been added to the API.
+          
 
-This repository is an example of what a typical SportsHi backend application codebase would look like, although production related files and folders have been omitted to keep things simple. The notable items are...
-- `local`: Shell script that provides a number of useful commands for local development; in your terminal run `./local` to see the full list of commands; you will at least need to use the `up`, `down`, `python`, and `lint` commands
-- `docker/local/`: Directory containing files used by Docker for local development
-- `components/`: Directory containing some number of isolated source code directories, each of which would run in a distinct Docker container; in this example there is only one component, but multiple components are common for real world applications, such as a server combined with a reverse proxy
-- `components/server/`: Directory containing the source code for a server, in this example a [Django](https://www.djangoproject.com/) server using Python 3; **you should only edit the files in this folder**
+Please feel free to email me at rahuljoseph246@gmail.com if you have any questions!
 
-### About the Django server
-
-The Django server has been created for you in the `components/server/` directory. It includes a Django app called `notes` in `server/apps/notes/` that was generated using the Django CLI and has not been modified. The Django project files are in  `server/project/`. The server is already setup to connect with a PostgreSQL database, which is automatically created for you when you start the server using the command `./local up`. You can kill the server using `./local down`, which will also bring down the database and save its data. If you need to use the Django CLI, you can run commands using `./local django-admin ...` or `./local python ...`. For example, to update the database with your latest models you would run `./local python manage.py migrate`. Note that these commands will be running **inside** a Docker container where the working directory is `server/`, so there is no need to change your terminal's working directory - it is suggested that you keep the top level directory of this repository as your terminal's working directory. To lint your Python code against the PEP 8 style guide run `./local lint`.
-
-### Your task
-
-Your task is to use the Django `notes` app to implement a simple REST API that allows clients to read from a global list of notes and add new notes. There is no notion of authentication or authorization - any client can use this API. The API is defined in [this OAS3 API specification](https://app.swaggerhub.com/apis/sportshi-team/notes/1.0). Most of your work should be confined to the `server/apps/notes/` directory, but you will at least need to update the `server/project/urls.py` file to make the API available for use. The [Django REST Framework](https://www.django-rest-framework.org/) app has been included in the project and you should use it for your API implementation. You should not install any additional Django apps.
-
-While developing you will need to interact with your API to test it. Run `./local up` to start the server - it will be available on `http://0.0.0.0:8000/`. How you make requests to your API is up to you, but some options are your terminal, web browser, or an API development tool like Postman.
-
-Roughly, the steps you need to follow to complete your task are...
-
-1. Clone the repository onto your machine
-2. [Download and install](https://docs.docker.com/v17.12/install/) Docker CE for your operating system; note that you do not need to install Python, PostgreSQL, or any other software onto your machine
-3. Start Docker
-4. Open your terminal and cd into the repository
-5. Run `./local python manage.py migrate` so that Django can initialize the database; the first time you run this will be slow as Docker will be starting from scratch
-6. Run `./local up` to start the server and database
-7. Visit `http://0.0.0.0:8000/` in your browser to verify that the django server is running
-8. Edit the files in `components/server/...` to implement the API defined [here](https://app.swaggerhub.com/apis/sportshi-team/notes/1.0)
-
-Additionally, your code should conform to the PEP 8 style guide; you can check how you're doing by running `./local lint`
-
-### When you are done
-
- Once you have finished your task you should push this repository to your own GitHub account under public settings so that it can be cloned by a SportsHi team member for testing. Let a SportsHi team member know when it is ready. They will test your API to see if it implements the specification. The quality of the code that you write will also be considered.
+Thank you again for this opportunity! I look forward to hopefully being selected to work with SportsHi as an intern!
