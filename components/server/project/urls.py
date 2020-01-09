@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from apps.notes.views import notesList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('notes/', notesList.as_view()),
 ]

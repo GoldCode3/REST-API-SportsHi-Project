@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 compose="docker-compose -p notes -f ./docker/local/docker-compose.yml"
 down="$compose stop -t 0 && $compose rm -f -v"
