@@ -8,7 +8,6 @@ from . serializers import notesSerializer
 import json
 
 
-
 # This class based view is used for the get and post methods
 class notesList(APIView):
 
@@ -29,5 +28,6 @@ class notesList(APIView):
             note_content = payload['note_content']
             note = notesFields(id=id, note_content=note_content)
             note.save()
-            response = json.dumps([{'id':note.id, 'note_content':note.note_content}])
+            response = json.dumps([{'id': note.id,
+                                    'note_content': note.note_content}])
         return HttpResponse(response, content_type='application/json')
