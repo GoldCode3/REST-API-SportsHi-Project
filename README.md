@@ -15,7 +15,7 @@ In order to test this implementation without any difficulty, I have listed some 
 9) You'll see another set of options but select "raw" because that is where we will specify what we want to post. Also change TEXT to JSON in the dropdown menu.
 10) This will introduce you to an empty editor where you should enter the following parameters exactly as shown below:
               {
-                 "id": "YOUR ID NUMBER HERE"
+                 "id": "YOUR ID NUMBER HERE",
                  "note_content": "THE CONTENTS OF YOUR NOTE HERE"
               }
 11) Once you fill in your id and your message, we are ready to send the POST request.
